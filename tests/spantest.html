@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enchanted Contenteditable Span</title>
+<style>
+  head,body {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<script type="text/javascript" src="../lined-content-editable.js"></script>
+<link rel="stylesheet" href="../lined-content-editable.css">
+</head>
+
+<body>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div style="display: flex; gap: 20px; flex-direction: column; justify-content: center;">
+    <div style="display: flex; flex-direction: row; gap: 20px; justify-content: center;">
+      <div 
+        data-lined-form
+        data-lined-form-header="<strong>Sandy is a &nbsp;</strong>"
+        data-lined-form-footer="<strong>&nbsp; , isn't she?</strong>"
+        data-lined-form-placeholder="Please enter answer"
+        max-length="200" 
+        style=" width: 100%; line-height: 3rem; font-size: 20pt; ">
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 20px; justify-content: center;">
+      <div 
+        data-lined-form
+        data-lined-form-header="<strong>Sandy is a &nbsp;</strong>"
+        data-lined-form-footer="<strong>&nbsp; , isn't she?</strong>"
+        min-lines="5" 
+        max-length="1000" 
+        style=" width: 250px; line-height: 1rem; font-size: 5pt; ">
+      </div>
+
+      <div 
+        data-lined-form
+        data-lined-form-header="<strong>Sandy is a &nbsp;</strong>"
+        data-lined-form-footer="<strong>&nbsp; , isn't she?</strong>"
+        min-lines="2" 
+        max-length="200" 
+        style=" width: 150px; line-height: 4rem; font-size: 15pt; ">
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 20px; justify-content: center;">
+      <div 
+        data-lined-form
+        data-lined-form-header="<strong>Sandy is a &nbsp;</strong>"
+        data-lined-form-footer="<strong>&nbsp; , isn't she?</strong>"
+        min-lines="2" 
+        max-length="200" 
+        style=" width: 250px; line-height: 3rem; font-size: 20pt; ">
+      </div>
+
+      <div 
+        data-lined-form
+        data-lined-form-header="<strong>Sandy is a &nbsp;</strong>"
+        data-lined-form-footer="<strong>&nbsp; , isn't she?</strong>"
+        style=" width: 150px; line-height: 2rem; font-size: 15pt; ">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll("[data-lined-form]").forEach((it) => {
+      LinedContentEditable.initialize(it);
+    })
+  </script>
+</body>
+</html>

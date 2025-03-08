@@ -1,0 +1,97 @@
+[data-lined-form-container] {
+  position: relative;
+}
+
+[data-lined-form-container] [data-lined-form-back-touch-detector] {
+  width: 100%;
+  height: 0;
+  position: absolute;
+  bottom: 0;
+  background-color: aqua;
+  opacity: 0.0;
+}
+
+
+[data-lined-form-container] [data-lined-form-text-content] {
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  position: absolute;
+}
+
+[data-lined-form-container] [data-lined-form-back-text-content] {
+  width: 100%;
+  min-height: 100%;
+  top: 0;
+  position: absolute;
+}
+
+
+[data-lined-form-container] [data-initial-span],
+[data-lined-form-container] [data-lined-form-content-editable],
+[data-lined-form-container] [data-header],
+[data-lined-form-container] [data-footer] {
+  vertical-align: top;
+
+}
+
+[data-lined-form-container] [data-header], 
+[data-lined-form-container] [data-footer] {
+  background: white;
+  border-top: 0px solid transparent;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  box-sizing: content-box;
+  z-index: 1;
+}
+[data-lined-form-container] [data-footer] {
+  position: absolute;
+  right: 0;
+}
+[data-lined-form-container] [data-header] {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+[data-lined-form-container] [contenteditable] {
+  caret-color: transparent;
+}
+
+[data-lined-form-container] [contenteditable][placeholder]:empty:after {
+  content: attr(placeholder);
+  color: #aaa;
+  pointer-events: none;
+  user-select: none;
+}
+
+[data-lined-form-container] [contenteditable][placeholder]:empty:focus:after {
+  content: "";
+  opacity: 0;
+}
+
+[data-lined-form-container] [data-lined-form-custom-caret] {
+  pointer-events: none;
+  user-select: none;
+  width: 1px;
+  /* animation: caret-blink 1s step-end infinite; */
+  animation: data-lined-form-custom-caret-blink 1s ease-in-out infinite;
+  background-color: black;
+  position: absolute;
+}
+
+/* Define the custom blinking caret animation */
+@keyframes data-lined-form-custom-caret-blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  /*
+  0%, 50% {
+    opacity: 0;
+  }
+  */
+  50% {
+    opacity: 1;
+  }
+}
+
